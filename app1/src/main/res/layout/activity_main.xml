@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.atguigu.guigushangcheng.MainActivity">
+
+    <FrameLayout
+        android:id="@+id/fl_main"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        />
+
+    <RadioGroup
+        android:id="@+id/rg_main"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/home_bottom_parent_bg"
+        android:orientation="horizontal">
+
+        <RadioButton
+            android:id="@+id/rb_home"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:button="@null"
+            android:gravity="center"
+            android:drawableTop="@drawable/rb_photo_home_selestor"
+            android:text="首页"
+            android:textColor="@drawable/rb_home_selestor"
+            android:textSize="15sp"
+            />
+
+        <RadioButton
+            android:id="@+id/rb_type"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:button="@null"
+            android:gravity="center"
+            android:drawableTop="@drawable/rb_photo_community_selestor"
+            android:text="分类"
+            android:textColor="@drawable/rb_home_selestor"
+            android:textSize="15sp"
+            />
+
+        <RadioButton
+            android:id="@+id/rb_community"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:button="@null"
+            android:gravity="center"
+            android:drawableTop="@drawable/rb_community_selestor"
+            android:text="发现"
+            android:textColor="@drawable/rb_home_selestor"
+            android:textSize="15sp"
+            android:paddingTop="10dp"
+            />
+
+        <RadioButton
+            android:id="@+id/rb_chrt"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:button="@null"
+            android:gravity="center"
+            android:drawableTop="@drawable/rb_photo_cart_selestor"
+            android:text="购物车"
+            android:textColor="@drawable/rb_home_selestor"
+            android:textSize="15sp"
+            />
+
+        <RadioButton
+            android:id="@+id/rb_user"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:button="@null"
+            android:gravity="center"
+            android:drawableTop="@drawable/rb_photo_home_selestor"
+            android:text="个人中心"
+            android:textColor="@drawable/rb_home_selestor"
+            android:textSize="15sp"
+            />
+    </RadioGroup>
+
+
+</LinearLayout>
