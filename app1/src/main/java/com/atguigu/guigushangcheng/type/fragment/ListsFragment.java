@@ -74,8 +74,7 @@ public class ListsFragment extends BaseFragment {
 
             }
         });
-        //联网请求
-        getDataFromNet(urls[0]);//进来时默认选择0位置的数据 否则进去时不显示内容
+        getDataFromNet(urls[0]);
     }
 
     private void getDataFromNet(String url) {

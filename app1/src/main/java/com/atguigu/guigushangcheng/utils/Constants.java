@@ -51,11 +51,11 @@ public class Constants {
     public static final String GAME_URL = BASE_URL_JSON + "GAME_URL.json";
 
 
-
+//    http://192.168.0.106/atguigu/json/NEW_POST_URL.json
     //分类Fragment里面的标签Fragment页面数据
     public static final String TAG_URL = BASE_URL_JSON + "TAG_URL.json";
 
-
+//    http://10.0.2.2:8080/atguigu/json/HOT_POST_URL.json
 
     //发现页面-的-新特路径
     public static final String NEW_POST_URL = BASE_URL_JSON + "NEW_POST_URL.json";
