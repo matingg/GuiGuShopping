@@ -3,6 +3,16 @@
           package="com.atguigu.guigushangcheng">
 
     <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.CAMERA"/>
+    <uses-permission android:name="android.permission.FLASHLIGHT"/>
+
+    <uses-feature android:name="android.hardware.camera"/>
+    <uses-feature android:name="android.hardware.camera.autofocus"/>
+
+    <uses-permission android:name="android.permission.VIBRATE"/>
+    <uses-permission android:name="android.permission.WAKE_LOCK"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
 
     <application
         android:allowBackup="true"
@@ -17,11 +27,19 @@
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
-        <activity android:name=".MainActivity">
+        <activity
+            android:name=".MainActivity"
+            android:launchMode="singleTask">
         </activity>
-
-
         <activity android:name=".app.GoodsInfoActivity">
+        </activity>
+        <activity android:name=".app.LoginActivity">
+        </activity>
+        <activity android:name=".home.activity.GoodsListActivity">
+        </activity>
+        <activity android:name=".app.Main2Activity">
+        </activity>
+        <activity android:name=".app.Main3Activity">
         </activity>
     </application>
 

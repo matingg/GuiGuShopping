@@ -1,6 +1,7 @@
 package com.atguigu.guigushangcheng.app;
 
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Build;
 import android.os.Bundle;
@@ -178,6 +179,11 @@ public class GoodsInfoActivity extends AppCompatActivity {
                 break;
             case R.id.tv_more_share:
                 Toast.makeText(this, "分享", Toast.LENGTH_SHORT).show();
+                String product_id = goodsBean.getProduct_id();
+                Intent intent = new Intent(this,Main3Activity.class);
+                intent.putExtra("id",product_id);
+                startActivity(intent);
+
                 break;
             case R.id.tv_more_search:
                 Toast.makeText(this, "搜索", Toast.LENGTH_SHORT).show();

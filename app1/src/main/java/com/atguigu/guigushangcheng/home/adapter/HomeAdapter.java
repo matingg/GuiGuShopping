@@ -17,6 +17,7 @@ import android.widget.Toast;
 
 import com.atguigu.guigushangcheng.R;
 import com.atguigu.guigushangcheng.app.GoodsInfoActivity;
+import com.atguigu.guigushangcheng.home.activity.GoodsListActivity;
 import com.atguigu.guigushangcheng.home.bean.GoodsBean;
 import com.atguigu.guigushangcheng.home.bean.HomeBean;
 import com.atguigu.guigushangcheng.home.view.MyGridView;
@@ -240,6 +241,7 @@ public class HomeAdapter extends RecyclerView.Adapter {
                 public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                     Toast.makeText(context, "被电击了" + position, Toast.LENGTH_SHORT).show();
 
+
                 }
             });
         }
@@ -378,6 +380,12 @@ public class HomeAdapter extends RecyclerView.Adapter {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Toast.makeText(context, "点击了" + position, Toast.LENGTH_SHORT).show();
+//跳转至商品详情页面  并把点击的位置传出去 用来寻找网路地址
+                Intent intent = new Intent(context, GoodsListActivity.class);
+                intent.putExtra("position", position);
+                context.startActivity(intent);
+
+
             }
         }
 
@@ -470,7 +478,7 @@ public class HomeAdapter extends RecyclerView.Adapter {
                         goodsBean.setCover_price(cover_price);
                         goodsBean.setFigure(image);
 
-                        Intent intent = new Intent(context ,GoodsInfoActivity.class );
+                        Intent intent = new Intent(context, GoodsInfoActivity.class);
                         intent.putExtra(GOODS_BEAN, goodsBean);
                         context.startActivity(intent);
                     }

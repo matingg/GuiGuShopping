@@ -6,15 +6,13 @@ package com.atguigu.guigushangcheng.utils;
 
 public class Constants {
 
+    public static String BASE_URL = "http://47.93.118.241:8081//android/resources";
 
 
+//    http://blog.csdn.net/qq_28057541/article/details/52034988
 
+//    public static String BASE_URL = "http://10.0.2.2:8080/atguigu";
 
-    public static String BASE_URL = "http://10.0.2.2:8080/atguigu";
-//        public static String BASE_URL = "http://192.168.51.104:8080/atguigu";
-//    public static String BASE_URL = "http://192.168.191.1:8080/atguigu";
-//    public static String BASE_URL = "http://192.168.0.106:8080/atguigu";
-//public static String BASE_URL = "http://192.168.191.1:8080/atguigu";
     private static final String BASE_URL_JSON = BASE_URL+"/json/";
     /**
      * 主页面的路径
@@ -64,6 +62,7 @@ public class Constants {
 
 
 
+//    http://192.168.1.52:8080/atguigu/json/CLOSE_STORE.json
     //服饰
     public static final String CLOSE_STORE = BASE_URL_JSON + "CLOSE_STORE.json";
     //游戏

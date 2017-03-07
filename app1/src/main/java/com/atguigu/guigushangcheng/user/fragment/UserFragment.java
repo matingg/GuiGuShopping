@@ -1,5 +1,6 @@
 package com.atguigu.guigushangcheng.user.fragment;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.util.Log;
 import android.view.View;
@@ -11,6 +12,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.atguigu.guigushangcheng.R;
+import com.atguigu.guigushangcheng.app.LoginActivity;
 import com.atguigu.guigushangcheng.base.BaseFragment;
 import com.atguigu.guigushangcheng.user.view.GradationScrollView;
 
@@ -123,9 +125,9 @@ public class UserFragment extends BaseFragment  implements GradationScrollView.S
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.tv_username:
-//                Toast.makeText(mContext, "登录/注册", Toast.LENGTH_SHORT).show();
-//                Intent intent = new Intent(context,LoginActivity.class);
-//                startActivity(intent);
+                Toast.makeText(context, "登录/注册", Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(context,LoginActivity.class);
+                startActivity(intent);
                 break;
             case R.id.ib_user_setting:
                 Toast.makeText(context, "设置", Toast.LENGTH_SHORT).show();

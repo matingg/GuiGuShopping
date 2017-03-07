@@ -18,7 +18,18 @@ android {
         }
     }
 }
+repositories {
+    jcenter()
+}
 
+dependencies {
+    compile 'com.journeyapps:zxing-android-embedded:3.3.0'
+    compile 'com.android.support:appcompat-v7:23.1.0'   // Version 23+ is required || 要求版本23以上
+}
+
+android {
+    buildToolsVersion '23.0.2' // Older versions may give compile errors ||　更早的版本可能会报错
+}
 dependencies {
     compile fileTree(include: ['*.jar'], dir: 'libs')
     androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
@@ -37,6 +48,9 @@ dependencies {
     compile 'com.google.code.gson:gson:2.2.4'
     compile project(':FlycoTabLayout_Lib')
     compile 'com.android.support:percent:25.2.0'
-    compile 'com.android.support:design:24.2.1'
+    compile 'com.android.support:design:25.2.0'
     compile 'com.linsea:opendanmaku:1.0.0@aar'
+    compile 'com.android.support:appcompat-v7:25.2.0'
+    compile 'com.google.zxing:core:3.2.1'
+
 }

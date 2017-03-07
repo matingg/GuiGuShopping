@@ -11,10 +11,12 @@ import android.widget.Toast;
 
 import com.alibaba.fastjson.JSON;
 import com.atguigu.guigushangcheng.R;
+import com.atguigu.guigushangcheng.app.Main2Activity;
 import com.atguigu.guigushangcheng.base.BaseFragment;
 import com.atguigu.guigushangcheng.home.adapter.HomeAdapter;
 import com.atguigu.guigushangcheng.home.bean.HomeBean;
 import com.atguigu.guigushangcheng.utils.Constants;
+import com.google.zxing.integration.android.IntentIntegrator;
 import com.zhy.http.okhttp.OkHttpUtils;
 import com.zhy.http.okhttp.callback.StringCallback;
 
@@ -40,12 +42,22 @@ public class HomeFragment extends BaseFragment {
     RecyclerView rvHome;
     @InjectView(R.id.ib_top)
     ImageButton ibTop;
+
+    public HomeBean.ResultBean getResult() {
+        return result;
+    }
+
     private HomeBean.ResultBean result;
+    public final static int REQUEST_CODE = 5;
+    public final static int REQUEST_IMAGE = 2;
+
+
 
     @Override
     public View initView() {
         View view = View.inflate(context, R.layout.fragment_home, null);
         ButterKnife.inject(this, view);
+
         return view;
 
     }
@@ -88,7 +100,7 @@ public class HomeFragment extends BaseFragment {
 
         result = homeBean.getResult();
 
-        Log.e("TAG", "*****"+ homeBean.getResult().getAct_info().get(0).getName());
+//        Log.e("TAG", "*****"+ homeBean.getResult().getAct_info().get(0).getName());
 
         HomeAdapter adapter = new HomeAdapter( context ,result );
 
@@ -97,8 +109,8 @@ public class HomeFragment extends BaseFragment {
         rvHome.setLayoutManager(new LinearLayoutManager(context ,LinearLayoutManager.VERTICAL, false));
     }
 
-
-    @OnClick({R.id.tv_search_home, R.id.tv_message_home, R.id.ib_top})//顶部布局的监听 搜索 消息 扫一扫
+//    ll_main_scan
+    @OnClick({R.id.tv_search_home, R.id.tv_message_home, R.id.ll_main_scan})//顶部布局的监听 搜索 消息 扫一扫
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.tv_search_home:
@@ -107,18 +119,22 @@ public class HomeFragment extends BaseFragment {
             case R.id.tv_message_home:
                 Toast.makeText(context , "消息" ,Toast.LENGTH_SHORT).show();
                 break;
-            case R.id.ib_top:
+            case R.id.ll_main_scan:
                 Toast.makeText(context , "扫一扫" ,Toast.LENGTH_SHORT).show();
+
+                new IntentIntegrator(getActivity())
+                        .setOrientationLocked(false)
+                        .setCaptureActivity(Main2Activity.class) // 设置自定义的activity是CustomActivity
+                        .initiateScan(); // 初始化扫描
+
+               // Intent intent = new Intent(context , Main2Activity.class);
+               // startActivity(intent);
                 break;
         }
+
+
+
     }
-
-
-
-
-
-
-
 
 
 
@@ -127,4 +143,6 @@ public class HomeFragment extends BaseFragment {
         super.onDestroyView();
         ButterKnife.reset(this);
     }
+
+
 }
